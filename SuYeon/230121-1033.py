@@ -1,3 +1,4 @@
+##################################################################################시간초과 뜸... 답은 맞음...
 import sys
 import math
 input = sys.stdin.readline
@@ -49,7 +50,6 @@ donotchange = [] #바꾸면 안되는 index를 저장함
 
 notoverlap = [ k for k in range(num) if k not in overlap]
 
-#겹치는 index의 수말고 다른 수를 바꾸는 함수
 def donotchangeoverlap(a,b,p,q):
     if a in overlap:
         reslist[b] = reslist[a]//p*q
@@ -96,5 +96,6 @@ for i in range(2,min(reslist)+1):
 for r in reslist:
     print(r, end=' ')
 
-########################################################시간초과 뜸... 
+##################################################################################
+
 
