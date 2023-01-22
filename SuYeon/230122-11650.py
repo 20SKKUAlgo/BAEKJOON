@@ -31,7 +31,7 @@ for i in range(num):
             else: #while문이 break문 때문에 빠져나간게 아니라 k += 1 때문에 while의 조건문을 만족하지 못해서 빠져나왔을 때
                 #x값은 같은 곳에서 y값이 제일 크기 때문에 맨 끝에 삽입 
                 infor.insert(k,[x,y])
-            break #if문이 아닌 elif문이 실행되었다면 for j in range(i)를 한번만 실행하고 for문을 빠져나가도 됨
+            break #if문이 아닌 elif문이 실행되었다면 for j in range(i)를 한번만 실행하고 for문을 빠져나가야 
 
 for l in infor:
     print(l[0], l[1])
