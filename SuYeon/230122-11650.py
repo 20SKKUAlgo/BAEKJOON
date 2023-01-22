@@ -35,3 +35,29 @@ for i in range(num):
 
 for l in infor:
     print(l[0], l[1])
+    
+###############################################맞음
+#key=lamda x : [x[0],x[1]]
+#를 이용해서 sort를 함
+"""
+ex) 
+data_list = [[1,2],[3,4],[4,5],[6,7],[8,9]]
+data_list.sort(key=lambda x : x[1])
+여기서 x는 data_list의 값 하나 [1,2]로 생각하면 됨
+여기서 두번째 값을 기준으로 정렬하고 싶다면 
+x[1]을 labmda x: 뒤에 붙여주면 된다.
+"""
+import sys
+import math
+input = sys.stdin.readline
+
+num = int(input())
+nlist = []
+
+for i in range(num):
+    nlist.append(list(map(int,input().split())))
+
+nlist.sort(key = lambda x : [x[0],x[1]])
+
+for i in nlist:
+    print(i[0], i[1])
