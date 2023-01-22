@@ -2,7 +2,7 @@ name: PS Count
 
 on:
   schedule:
-    - cron: '31 5,17 * * *'
+    - cron: '32 * * * *'
 
 jobs:
   alert:
