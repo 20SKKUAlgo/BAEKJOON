@@ -36,3 +36,40 @@ def find(M):
             find(M-1)
 
 find(M)
+
+
+########################################################
+#재귀호출 없애고 while문으로 함
+#런타임 에러 안 뜸. 재귀때문에 런타임 에러 뜬거 맞았음
+#근데 시간초과
+import sys
+input = sys.stdin.readline
+
+N, M = map(int,input().split())
+
+card = list(map(int,input().split()))
+
+card.sort() #카드리스트 정렬
+
+#앞에서부터 2개 더한 후 목표 값과의 차이가 나는 수가 있는지 확인
+#없으면 M의 값을 하나씩 빼면서 M과 합이 맞다면 출
+
+while M >= 0:   
+    for i in range(N-1):
+        stop = 0
+        for j in range(i+1,N):
+            two = card[i]+card[j]
+            dis = M - two
+            if (dis!= card[i]) and (dis!=card[j]) and (dis in card):
+                print(M)
+                stop = 1
+                break
+            else:
+                continue
+        if stop == 1:
+            M = -1
+            break
+        if i == N-2:
+            M -= 1
+            break
+        
