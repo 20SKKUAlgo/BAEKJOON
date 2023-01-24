@@ -74,9 +74,10 @@ while M >= 0:
             break
         
 ########################################################
+#파이썬에서 제공하는 순열 조합 library itertools 모듈의 combinations 함수 사용
+#맞음
 import sys
 from itertools import combinations
-#파이썬에서 제공하는 순열 조합 library itertools 모듈의 combinations 함수 사용
 
 input = sys.stdin.readline
 
