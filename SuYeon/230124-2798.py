@@ -52,7 +52,7 @@ card = list(map(int,input().split()))
 card.sort() #카드리스트 정렬
 
 #앞에서부터 2개 더한 후 목표 값과의 차이가 나는 수가 있는지 확인
-#없으면 M의 값을 하나씩 빼면서 M과 합이 맞다면 출
+#없으면 M의 값을 하나씩 빼면서 M과 합이 맞다면 출력
 
 while M >= 0:   
     for i in range(N-1):
@@ -73,3 +73,22 @@ while M >= 0:
             M -= 1
             break
         
+########################################################
+import sys
+from itertools import combinations
+#파이썬에서 제공하는 순열 조합 library itertools 모듈의 combinations 함수 사용
+
+input = sys.stdin.readline
+
+N, M = map(int,input().split())
+
+card = list(map(int,input().split()))
+
+maxnum = 0
+
+for i in combinations(card,3):
+    sumnum = sum(i)
+    if maxnum < sumnum <= M:
+        maxnum = sumnum
+
+print(maxnum)
