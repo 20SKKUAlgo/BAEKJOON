@@ -1,6 +1,5 @@
 # dfs는 stack을 이용
 # bfs는 queue를 이용
-# 미완성
 from collections import deque
 
 info = list(map(int, input().split()))
@@ -29,25 +28,25 @@ for item in graphed:
 def dfs(graph, v, visited):
   visited[v] = True
   print(v, end=" ")
-  for i in graph[v]:
-    if (not visited[i] and graph[v][i]):
+  for i in range(len(graph[v])):
+    if (not visited[i] and graph[v][i] == 1):
       dfs(graph, i, visited)
 
 dfs(graph, startV, Dvisited)
 
-# print()
-# def bfs(graph, v, visited):
-#   queue = deque([v])
-#   visited[v] = True
-#   while queue:
-#     vertex = queue.popleft()
-#     print(vertex, end=" ")
-#     for i in graph[vertex]:
-#       if not visited[i]:
-#         queue.append(i)
-#         visited[i] = True
+print()
+def bfs(graph, v, visited):
+  queue = deque([v])
+  visited[v] = True
+  while queue:
+    vertex = queue.popleft()
+    print(vertex, end=" ")
+    for i in range(len(graph[vertex])):
+      if not visited[i] and graph[vertex][i] == 1:
+        queue.append(i)
+        visited[i] = True
 
-# bfs(graph, startV, Bvisited)
+bfs(graph, startV, Bvisited)
 
 
 
