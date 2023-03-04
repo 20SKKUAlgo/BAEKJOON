@@ -6,9 +6,11 @@ from itertools import combinations
 
 news = []
 for i in range(2,len(lst)+1):
-  combi = list(combinations(lst, i))
-  for j in combi:
+  for j in combinations(lst, i):
     news.append(sum(j))
+
+# 중복제거를 위해 작성 / 안쓰면 시간 초과
+news = set(news) 
 
 while True:
   if r in lst:
