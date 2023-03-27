@@ -1,4 +1,5 @@
 import sys
+read = sys.stdin.readline
 
 class Node:
   def __init__(self, data):
@@ -6,7 +7,7 @@ class Node:
     self.right = None
     self.data = data
 
-read = sys.stdin.readline
+# 입력값 받기
 lst = []
 while True:
   try:
@@ -14,9 +15,16 @@ while True:
   except:
     break
 
-def dfs(node, child):
+def preTraversal(node, child):
   parent = node.data
   if parent > child:
     node.left = Node(child)
   else:
     node.right = Node(child)
+
+root = Node(lst[0])
+nn = root
+np = None
+for i in range(1, len(lst)):
+
+  
