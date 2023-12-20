@@ -1,7 +1,8 @@
 /*
-9°³ÀÇ ¼ýÀÚ Áß¿¡¼­ 7°³ÀÇ ÇÕÀÌ 100ÀÎ °ÍÀ» Ã£´Â °Íº¸´Ù ¾Æ´Ñ 2°³¸¦ Ã£´Â °ÍÀÌ ´õ ºü¸£°ÚÁö..?
-¸ÕÀú ¸ðµç ÇÕÀ» ±¸ÇÏ°í °Å±â¼­ 100À» »©¼­ Â÷ÀÌ¸¦ °è»êÇÏÀÚ
-9°³ÀÇ ¼ýÀÚ Áß¿¡¼­ 2°³ÀÇ ÇÕÀÌ Â÷ÀÌÀÎ °ÍÀ» Ã£ÀÚ...
+9ê°œì˜ ìˆ«ìž ì¤‘ì—ì„œ 7ê°œì˜ í•©ì´ 100ì¸ ê²ƒì„ ì°¾ëŠ” ê²ƒë³´ë‹¤ ì•„ë‹Œ 2ê°œë¥¼ ì°¾ëŠ” ê²ƒì´ ë” ë¹ ë¥´ê² ì§€..?
+ë¨¼ì € ëª¨ë“  í•©ì„ êµ¬í•˜ê³  ê±°ê¸°ì„œ 100ì„ ë¹¼ì„œ ì°¨ì´ë¥¼ ê³„ì‚°í•˜ìž
+9ê°œì˜ ìˆ«ìž ì¤‘ì—ì„œ 2ê°œì˜ í•©ì´ ì°¨ì´ì¸ ê²ƒì„ ì°¾ìž...
+ê²°ê³¼: ë§žì•˜ìŠµë‹ˆë‹¤!!
 */
 
 #include <iostream>
@@ -19,17 +20,17 @@ int main()
         diff += h;
         height_vect.push_back(h);
     }
-    sort(height_vect.begin(), height_vect.end()); // ¿À¸§Â÷¼ø Á¤·Ä
-    diff -= 100; // µÎ °³ÀÇ ÇÕÀÌ diffÀÎ °ÍÀ» Ã£¾Æ¾ß ÇÔ
+    sort(height_vect.begin(), height_vect.end()); // ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
+    diff -= 100; // ë‘ ê°œì˜ í•©ì´ diffì¸ ê²ƒì„ ì°¾ì•„ì•¼ í•¨
 
     for(int i=0;i<9;i++){
         for(int j=i+1;j<9;j++){
-            if(height_vect[i]+height_vect[j]==diff){ // µÎ°³ÀÇ ÇÕÀÌ diffÀÎ °Í Ã£À½
-                height_vect.erase(height_vect.begin() + i); // µÎ ¼ýÀÚ Áß Ã¹¹øÂ° °Å Á¦°Å
-                height_vect.erase(height_vect.begin() + j-1); // µÎ ¼ýÀÚ Áß µÎ¹øÂ° °Å Á¦°Å (iº¸´Ù j°¡ Å« °ÍÀ» °¨¾ÈÇÏ¿© i¸¦ Á¦°ÅÇÏ¸é ¾Õ¿¡°Å ÇÏ³ª°¡ ¾ø¾îÁö¹Ç·Î j¿¡¼­ 1À» »« index Á¦°Å)
+            if(height_vect[i]+height_vect[j]==diff){ // ë‘ê°œì˜ í•©ì´ diffì¸ ê²ƒ ì°¾ìŒ
+                height_vect.erase(height_vect.begin() + i); // ë‘ ìˆ«ìž ì¤‘ ì²«ë²ˆì§¸ ê±° ì œê±°
+                height_vect.erase(height_vect.begin() + j-1); // ë‘ ìˆ«ìž ì¤‘ ë‘ë²ˆì§¸ ê±° ì œê±° (ië³´ë‹¤ jê°€ í° ê²ƒì„ ê°ì•ˆí•˜ì—¬ ië¥¼ ì œê±°í•˜ë©´ ì•žì—ê±° í•˜ë‚˜ê°€ ì—†ì–´ì§€ë¯€ë¡œ jì—ì„œ 1ì„ ëº€ index ì œê±°)
                 for(auto h:height_vect)
                 {
-                    cout << h << endl; // ´ä Ãâ·Â
+                    cout << h << endl; // ë‹µ ì¶œë ¥
                 }
                 return 0;
             }
